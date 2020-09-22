@@ -23,7 +23,7 @@ export function AsideMenuList({layoutProps}) {
                 {/* Affiliate */}
                 {/* begin::section */}
                 <li className="menu-section ">
-                    <h4 className="menu-text">Affiliate</h4>
+                    <h4 className="menu-text">Admin</h4>
                     <i className="menu-icon flaticon-more-v2"></i>
                 </li>
                 {/* end:: section */}
@@ -41,7 +41,7 @@ export function AsideMenuList({layoutProps}) {
                       <span className="svg-icon menu-icon">
                         <SVG src={toAbsoluteUrl("/media/svg/icons/Design/Cap-2.svg")}/>
                       </span>
-                        <span className="menu-text">Affiliate Referrals</span>
+                        <span className="menu-text">Affiliates</span>
                         <i className="menu-arrow"/>
                     </NavLink>
                     <div className="menu-submenu ">
@@ -55,19 +55,18 @@ export function AsideMenuList({layoutProps}) {
 
                             {/*begin::2 Level*/}
                             <li className={`menu-item menu-item-submenu ${getMenuItemActive(routeList.referrals.add,
-                                true)}`} aria-haspopup="true" data-menu-toggle="hover"
-                            >
-                                <NavLink className="menu-link menu-toggle" to={routeList.referrals.add}>
+                                true)}`} aria-haspopup="true" data-menu-toggle="hover">
+                                <NavLink className="menu-link menu-toggle" to={routeList.referrals.view}>
                                     <i className="menu-bullet menu-bullet-dot">
                                         <span/>
                                     </i>
-                                    <span className="menu-text">Add Referrals</span>
+                                    <span className="menu-text">All Referrals</span>
                                 </NavLink>
                                 <NavLink className="menu-link menu-toggle" to={routeList.referrals.view}>
                                     <i className="menu-bullet menu-bullet-dot">
                                         <span/>
                                     </i>
-                                    <span className="menu-text">View Referrals</span>
+                                    <span className="menu-text">Verified Referrals</span>
                                 </NavLink>
                             </li>
                             {/*end::2 Level*/}
@@ -101,12 +100,6 @@ export function AsideMenuList({layoutProps}) {
                             <li className={`menu-item menu-item-submenu ${getMenuItemActive(routeList.clients.view,
                                 true)}`} aria-haspopup="true" data-menu-toggle="hover"
                             >
-                                <NavLink className="menu-link menu-toggle" to={routeList.clients.view}>
-                                    <i className="menu-bullet menu-bullet-dot">
-                                        <span/>
-                                    </i>
-                                    <span className="menu-text">Add Clients</span>
-                                </NavLink>
                                 <NavLink className="menu-link menu-toggle" to={routeList.clients.add}>
                                     <i className="menu-bullet menu-bullet-dot">
                                         <span/>
