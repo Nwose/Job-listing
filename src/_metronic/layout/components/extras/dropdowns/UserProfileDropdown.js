@@ -3,21 +3,10 @@
 import React, {useMemo} from "react";
 import {Link} from "react-router-dom";
 import Dropdown from "react-bootstrap/Dropdown";
-import objectPath from "object-path";
-import {useHtmlClassService} from "../../../_core/MetronicLayout";
 import {DropdownTopbarItemToggler} from "../../../../_partials/dropdowns";
 
 export function UserProfileDropdown() {
     let user = JSON.parse(localStorage.getItem("user"));
-
-    const uiService = useHtmlClassService();
-    const layoutProps = useMemo(() => {
-        return {
-            light:
-                objectPath.get(uiService.config, "extras.user.dropdown.style") ===
-                "light",
-        };
-    }, [uiService]);
 
     return (
         <Dropdown drop="down" alignRight>

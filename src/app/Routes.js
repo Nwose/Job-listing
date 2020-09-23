@@ -7,7 +7,6 @@
 
 import React from "react";
 import {Redirect, Switch, Route} from "react-router-dom";
-import {shallowEqual, useSelector} from "react-redux";
 import {Layout} from "../_metronic/layout";
 import BasePage from "./BasePage";
 import {Logout, AuthPage} from "./modules/Auth";
@@ -15,10 +14,10 @@ import {Logout, AuthPage} from "./modules/Auth";
 // import ErrorsPage from "./modules/ErrorsExamples/ErrorsPage";
 
 export function Routes() {
-    const login = localStorage.getItem('l2');
+    const login = parseInt(localStorage.getItem('l2'));
     let isAuthorized = false;
 
-    if (login == 1) {
+    if (login === 1) {
         isAuthorized = true;
     }
 

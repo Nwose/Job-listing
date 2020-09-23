@@ -1,11 +1,9 @@
 /* eslint-disable no-script-url,jsx-a11y/anchor-is-valid,no-undef */
 import React from "react";
 import SVG from "react-inlinesvg";
-import { useHistory } from "react-router-dom";
 import {toAbsoluteUrl} from "../../../../_helpers";
 
 export function QuickUser() {
-  const history = useHistory();
   let user = JSON.parse(localStorage.getItem("user"));
 
   const logoutClick = () => {
@@ -16,7 +14,6 @@ export function QuickUser() {
       }
     window.location.href = "/logout";
 
-    // history.push("/logout");
   };
 
   return (
