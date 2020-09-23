@@ -138,13 +138,13 @@ export function AsideMenuList({layoutProps}) {
                             <li className={`menu-item menu-item-submenu ${getMenuItemActive("",
                                 true)}`} aria-haspopup="true" data-menu-toggle="hover"
                             >
-                                <NavLink className="menu-link menu-toggle" to="/google-material/inputs">
+                                <NavLink className="menu-link menu-toggle" to={routeList.club.view_clubs}>
                                     <i className="menu-bullet menu-bullet-dot">
                                         <span/>
                                     </i>
                                     <span className="menu-text">Club Category</span>
                                 </NavLink>
-                                <NavLink className="menu-link menu-toggle" to="/google-material/inputs">
+                                <NavLink className="menu-link menu-toggle" to={routeList.club.view_club_members}>
                                     <i className="menu-bullet menu-bullet-dot">
                                         <span/>
                                     </i>

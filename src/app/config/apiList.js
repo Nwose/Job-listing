@@ -33,9 +33,9 @@ export const api = Object.freeze({
             headers: admin_headers,
         }
     },
-    proof_of_existence: {
-        document_type: {
-            url: baseUrl + "user/document/types",
+    club: {
+        all_club_members: {
+            url: baseUrl + "admin/club/members",
             method: "get",
             data: "",
             headers: admin_headers,
