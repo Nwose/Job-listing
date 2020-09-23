@@ -6,13 +6,17 @@ import {toAbsoluteUrl} from "../../../../_helpers";
 
 export function QuickUser() {
   const history = useHistory();
+  let user = JSON.parse(localStorage.getItem("user"));
 
   const logoutClick = () => {
+    localStorage.setItem("l2", 0);
       const toggle = document.getElementById("kt_quick_user_toggle");
       if (toggle) {
         toggle.click();
       }
-      history.push("/logout");
+    window.location.href = "/logout";
+
+    // history.push("/logout");
   };
 
   return (
@@ -39,9 +43,7 @@ export function QuickUser() {
                 className="symbol symbol-100 mr-5"
             >
               <div className="symbol-label" style={{
-                backgroundImage: `url(${toAbsoluteUrl(
-                    "/media/users/300_21.jpg"
-                )})`
+                backgroundImage: `url(${user.passport})`
               }}/>
               <i className="symbol-badge bg-success"/>
             </div>
@@ -50,9 +52,9 @@ export function QuickUser() {
                   href="#"
                   className="font-weight-bold font-size-h5 text-dark-75 text-hover-primary"
               >
-                James Jones
+                {user.name}
               </a>
-              <div className="text-muted mt-1">Application Developer</div>
+              <div className="text-muted mt-1">Admin</div>
               <div className="navi mt-2">
                 <a href="#" className="navi-item">
                 <span className="navi-link p-0 pb-2">
@@ -66,7 +68,7 @@ export function QuickUser() {
                     </span>
                   </span>
                   <span className="navi-text text-muted text-hover-primary">
-                    jm@softplus.com
+                    {user.email}
                   </span>
                 </span>
                 </a>
@@ -127,45 +129,6 @@ export function QuickUser() {
               </div>
             </a>
 
-            <a href="/user/profile" className="navi-item">
-              <div className="navi-link">
-                <div className="symbol symbol-40 bg-light mr-3">
-                  <div className="symbol-label">
-                  <span className="svg-icon svg-icon-md svg-icon-danger">
-                    <SVG
-                        src={toAbsoluteUrl(
-                            "/media/svg/icons/Files/Selected-file.svg"
-                        )}
-                    ></SVG>
-                  </span>
-                  </div>
-                </div>
-                <div className="navi-text">
-                  <div className="font-weight-bold">My Activities</div>
-                  <div className="text-muted">Logs and notifications</div>
-                </div>
-              </div>
-            </a>
-
-            <a href="/user/profile" className="navi-item">
-              <div className="navi-link">
-                <div className="symbol symbol-40 bg-light mr-3">
-                  <div className="symbol-label">
-                  <span className="svg-icon svg-icon-md svg-icon-primary">
-                    <SVG
-                        src={toAbsoluteUrl(
-                            "/media/svg/icons/Communication/Mail-opened.svg"
-                        )}
-                    ></SVG>
-                  </span>
-                  </div>
-                </div>
-                <div className="navi-text">
-                  <div className="font-weight-bold">My Tasks</div>
-                  <div className="text-muted">latest tasks and projects</div>
-                </div>
-              </div>
-            </a>
           </div>
 
           <div className="separator separator-dashed my-7"></div>

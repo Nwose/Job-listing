@@ -8,13 +8,13 @@
 }
 
 .inactive{
-    background: #EBC315;
+    background: rgba(255, 0, 0, 0.36);
 }
-.active{
-    background: #27AE60;
+.active1{
+    background: rgba(0, 0, 255, 0.37);
 }
 .verified{
-    background: #C4C4C4;
+    background: rgba(39, 174, 96, 0.51);
 }
 
 .badge.badge-dot {

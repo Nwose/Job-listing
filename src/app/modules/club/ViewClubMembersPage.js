@@ -45,9 +45,9 @@ class ViewClubMembersPage extends Component {
             badge_status = "inactive";
         } else if (row.status == 1) {
             status_word = "Active";
-            badge_status = "active";
+            badge_status = "active1";
 
-        } else if (row.status == 1) {
+        } else if (row.status == 2) {
             status_word = "Verified";
             badge_status = "verified";
 
@@ -109,6 +109,7 @@ class ViewClubMembersPage extends Component {
             {
                 dataField: 'name',
                 text: 'Name',
+                sort: true,
                 align: 'center',
                 formatter: this.table_image,
                 headerAlign: 'center',

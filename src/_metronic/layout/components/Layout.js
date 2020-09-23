@@ -8,7 +8,6 @@ import {HeaderMobile} from "./header-mobile/HeaderMobile";
 import {Aside} from "./aside/Aside";
 import {Footer} from "./footer/Footer";
 import {LayoutInit} from "./LayoutInit";
-import {SubHeader} from "./subheader/SubHeader";
 import {QuickPanel} from "./extras/offcanvas/QuickPanel";
 import {QuickUser} from "./extras/offcanvas/QuickUser";
 import {ScrollTop} from "./extras/ScrollTop";
@@ -49,7 +48,6 @@ export function Layout({ children }) {
                             id="kt_content"
                             className={`content ${layoutProps.contentCssClasses} d-flex flex-column flex-column-fluid`}
                         >
-                            {layoutProps.subheaderDisplay && <SubHeader/>}
                             {/*begin::Entry*/}
                             {!layoutProps.contentExtended && (
                                 <div className="d-flex flex-column-fluid">
