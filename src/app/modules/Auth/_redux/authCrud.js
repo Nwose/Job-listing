@@ -1,6 +1,7 @@
 import axios from "axios";
 
-export const LOGIN_URL = "http://127.0.0.1:9900/admin/login";
+// export const LOGIN_URL = "http://127.0.0.1:9900/admin/login";
+export const LOGIN_URL = "https://farmkonnect-backend.herokuapp.com/admin/login";
 export const REGISTER_URL = "api/auth/register";
 export const REQUEST_PASSWORD_URL = "api/auth/forgot-password";
 
