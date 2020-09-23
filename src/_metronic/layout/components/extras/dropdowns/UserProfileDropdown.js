@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-imports */
 /* eslint-disable no-script-url,jsx-a11y/anchor-is-valid */
-import React, {useMemo} from "react";
+import React from "react";
 import {Link} from "react-router-dom";
 import Dropdown from "react-bootstrap/Dropdown";
 import {DropdownTopbarItemToggler} from "../../../../_partials/dropdowns";

@@ -36,18 +36,17 @@ class ViewClubMembersPage extends Component {
 
     app_status(cell, row) {
 
-        console.log(row.status);
         let status_word = "";
         let badge_status = "";
 
-        if (row.status == 0) {
+        if (row.status === 0) {
             status_word = "Inactive";
             badge_status = "inactive";
-        } else if (row.status == 1) {
+        } else if (row.status === 1) {
             status_word = "Active";
             badge_status = "active1";
 
-        } else if (row.status == 2) {
+        } else if (row.status === 2) {
             status_word = "Verified";
             badge_status = "verified";
 

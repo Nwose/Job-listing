@@ -4,9 +4,9 @@ import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 import {apiAction} from "../../helpers/apiConnection";
 import {api} from "../../config/apiList";
 import {generic_submit} from "../../helpers/genericFunctions";
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 import {populate_options} from "../../helpers/genericFunctions";
-import {FormattedMessage} from "react-intl";
+// import {FormattedMessage} from "react-intl";
 
 class RegisterAffiliatePage extends Component {
     state = {
