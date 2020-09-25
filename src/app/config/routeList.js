@@ -1,8 +1,10 @@
 export const routeList = Object.freeze({
 
     referrals: {
-        add: "/add_affiliate",
-        view: "/view_affiliate",
+        view: "/view_all_affiliate",
+        view_active: "/view_active_affiliate",
+        view_verified: "/view_verified_affiliate",
+        view_suspended: "/view_suspended_affiliate",
     },
     clients: {
         add: "/add_client",

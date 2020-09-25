@@ -16,6 +16,12 @@
 .verified{
     background: rgba(39, 174, 96, 0.51);
 }
+.suspended{
+    background: rgba(198, 35, 45, 0.82);
+}
+.action_options{
+    z-index: 1000;
+}
 
 .badge.badge-dot {
     width: 9px;

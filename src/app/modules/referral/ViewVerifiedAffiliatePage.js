@@ -14,25 +14,25 @@ class ViewAffiliatePage extends Component {
 
     componentDidMount() {
 
-        apiAction(api.affiliates.all_affiliates, this.init_data);
+        apiAction(api.affiliates.verified_affiliates, this.init_data);
 
     }
 
 
     init_data = (res) => {
         console.log(res.data.data);
-        if (!res.data.data == "") {
+        //merge club name with user object
 
-            //merge club name with user object
+        if (!res.data.data == "") {
             let user_data = res.data.data.map((element, index) => {
                 let club_name = {club_name: element.clubs[0].name};
                 return {...element, ...club_name}
             });
-
             this.setState({
                 data: user_data
             }, () => console.log(this.state.data))
         }
+
     };
     update_status = (api_url, status, user_id) => {
         this.setState({

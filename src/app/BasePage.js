@@ -6,7 +6,10 @@ import {routeList} from "./config/routeList";
 
 
 import ViewAffiliatePage from "./modules/referral/ViewAffiliatePage";
-import RegisterAffiliatePage from "./modules/referral/RegisterAffiliatePage";
+import ViewActiveAffiliatePage from "./modules/referral/ViewActiveAffiliatePage";
+import ViewSuspendedAffiliatePage from "./modules/referral/ViewSuspendedAffiliatePage";
+import ViewVerifiedAffiliatePage from "./modules/referral/ViewVerifiedAffiliatePage";
+
 
 import ViewClubMembersPage from "./modules/club/ViewClubMembersPage";
 import ViewClubsPage from "./modules/club/ViewClubsPage";
@@ -28,7 +31,10 @@ export default function BasePage() {
 
                 {/*affiliates*/}
                 <ContentRoute path={routeList.referrals.view} component={ViewAffiliatePage}/>
-                <ContentRoute path={routeList.referrals.add} component={RegisterAffiliatePage}/>
+                <ContentRoute path={routeList.referrals.view_active} component={ViewActiveAffiliatePage}/>
+                <ContentRoute path={routeList.referrals.view_suspended} component={ViewSuspendedAffiliatePage}/>
+                <ContentRoute path={routeList.referrals.view_verified} component={ViewVerifiedAffiliatePage}/>
+
 
                 {/*clubs*/}
                 <ContentRoute path={routeList.club.view_club_members} component={ViewClubMembersPage}/>

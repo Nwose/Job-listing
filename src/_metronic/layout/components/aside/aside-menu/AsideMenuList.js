@@ -49,7 +49,7 @@ export function AsideMenuList({layoutProps}) {
                         <ul className="menu-subnav">
                             <li className="menu-item  menu-item-parent" aria-haspopup="true">
                                 <span className="menu-link">
-                                  <span className="menu-text">Referrals</span>
+                                  <span className="menu-text">Affiliates</span>
                                 </span>
                             </li>
 
@@ -60,14 +60,27 @@ export function AsideMenuList({layoutProps}) {
                                     <i className="menu-bullet menu-bullet-dot">
                                         <span/>
                                     </i>
-                                    <span className="menu-text">All Referrals</span>
+                                    <span className="menu-text">All Affiliates</span>
                                 </NavLink>
-                                <NavLink className="menu-link menu-toggle" to={routeList.referrals.view}>
+                                <NavLink className="menu-link menu-toggle" to={routeList.referrals.view_verified}>
                                     <i className="menu-bullet menu-bullet-dot">
                                         <span/>
                                     </i>
-                                    <span className="menu-text">Verified Referrals</span>
+                                    <span className="menu-text">Verified Affiliates</span>
                                 </NavLink>
+                                <NavLink className="menu-link menu-toggle" to={routeList.referrals.view_active}>
+                                    <i className="menu-bullet menu-bullet-dot">
+                                        <span/>
+                                    </i>
+                                    <span className="menu-text">Active Affiliates</span>
+                                </NavLink>
+                                <NavLink className="menu-link menu-toggle" to={routeList.referrals.view_suspended}>
+                                    <i className="menu-bullet menu-bullet-dot">
+                                        <span/>
+                                    </i>
+                                    <span className="menu-text">Suspended Affiliates</span>
+                                </NavLink>
+
                             </li>
                             {/*end::2 Level*/}
 
