@@ -70,7 +70,7 @@ class ViewAffiliatePage extends Component {
         return (
             <div>
                 <ViewUsersPage users={this.state.data} update_status={this.update_status}
-                               table_title="View All Affiliates"/>
+                               table_title="Verified All Affiliates"/>
             </div>
         );
     }
