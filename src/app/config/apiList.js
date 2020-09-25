@@ -7,8 +7,8 @@ const admin_headers = {
 
 };
 
-// let baseUrl = "https://farmkonnect-backend.herokuapp.com/";
-let baseUrl = "http://127.0.0.1:9900/";
+let baseUrl = "https://farmkonnect-backend.herokuapp.com/";
+// let baseUrl = "http://127.0.0.1:9900/";
 
 
 export const api = Object.freeze({
