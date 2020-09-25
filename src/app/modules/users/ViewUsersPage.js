@@ -110,8 +110,8 @@ class ViewUsersPage extends Component {
             )
         } else if (row.status == 3) {
             options.push(
-                {api: api.affiliates_action_options.view_affiliate, action: " View"},
-                {api: api.affiliates_action_options.view_affiliate, action: " Unsuspend"}
+                {action: () => my_action(api.affiliates_action_options.view_affiliate, ""), word: " View"},
+                {action: () => my_action(api.affiliates_action_options.view_affiliate, 1), word: " Unsuspend"},
             )
         }
 
