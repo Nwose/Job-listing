@@ -9,10 +9,13 @@ import ViewUsersPage from "../users/ViewUsersPage";
 class ViewAffiliatePage extends Component {
 
     state = {
-        data: []
+        data: [],
+        loader: false,
     };
 
     componentDidMount() {
+        //display loader
+        this.setState({ loader: true });
 
         apiAction(api.affiliates.active_affiliates, this.init_data);
 
@@ -29,7 +32,8 @@ class ViewAffiliatePage extends Component {
                 return {...element, ...club_name}
             });
             this.setState({
-                data: user_data
+                data: user_data,
+                loader: false,
             }, () => console.log(this.state.data))
         }
 
@@ -65,12 +69,15 @@ class ViewAffiliatePage extends Component {
     };
 
     render() {
-
+        const { loader } = this.state;
 
         return (
             <div>
-                <ViewUsersPage users={this.state.data} update_status={this.update_status}
-                               table_title="Active Affiliates"/>
+                <ViewUsersPage
+                    users={this.state.data}
+                    loader = {this.state.loader}
+                    update_status={this.update_status}
+                    table_title="Active Affiliates"/>
             </div>
         );
     }

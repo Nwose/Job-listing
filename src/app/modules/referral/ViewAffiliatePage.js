@@ -6,21 +6,22 @@ import {api} from "../../config/apiList";
 import ViewUsersPage from "../users/ViewUsersPage";
 
 
+
 class ViewAffiliatePage extends Component {
 
     state = {
-        data: []
+        data: [],
+        loader: false,
     };
-
     componentDidMount() {
 
-        apiAction(api.affiliates.all_affiliates, this.init_data);
+        //display loader
+        this.setState({ loader: true });
 
+        apiAction(api.affiliates.all_affiliates, this.init_data);
     }
 
-
     init_data = (res) => {
-        console.log(res.data.data);
         if (!res.data.data == "") {
 
             //merge club name with user object
@@ -30,9 +31,11 @@ class ViewAffiliatePage extends Component {
             });
 
             this.setState({
-                data: user_data
-            }, () => console.log(this.state.data))
+                data: user_data,
+                loader: false,
+            }, () => console.log(this.state))
         }
+
     };
     update_status = (api_url, status, user_id) => {
         this.setState({
@@ -66,11 +69,14 @@ class ViewAffiliatePage extends Component {
 
     render() {
 
-
         return (
             <div>
-                <ViewUsersPage users={this.state.data} update_status={this.update_status}
-                               table_title="All Affiliates"/>
+
+                <ViewUsersPage
+                    users={this.state.data}
+                    loader = {this.state.loader}
+                    update_status={this.update_status}
+                    table_title="All Affiliates"/>
             </div>
         );
     }

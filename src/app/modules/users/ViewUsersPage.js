@@ -6,6 +6,8 @@ import BootstrapTable from 'react-bootstrap-table-next';
 
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import {api} from "../../config/apiList";
+import { InPageLoader } from "../../../_metronic/layout/components/loader/inPageLoader";
+
 
 
 class ViewUsersPage extends Component {
@@ -72,8 +74,6 @@ class ViewUsersPage extends Component {
 
         )
     };
-
-
 
     button_action = (cell, row, rowIndex) => {
 
@@ -187,6 +187,9 @@ class ViewUsersPage extends Component {
             dataField: 'name',
             order: 'desc'
         }];
+
+        const { loader } = this.props;
+
         return (
             <div className="page-container mt-3">
                 <div className="main-content">
@@ -203,6 +206,8 @@ class ViewUsersPage extends Component {
 
                                 <div className="card">
                                     <div className="card-body">
+                                        <InPageLoader loader={loader} />
+
                                         <BootstrapTable
                                             keyField='id'
                                             data={this.props.users}

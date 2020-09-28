@@ -9,10 +9,14 @@ import ViewUsersPage from "../users/ViewUsersPage";
 class ViewClubMembersPage extends Component {
 
     state = {
-        data: []
+        data: [],
+        loader: false,
     };
 
     componentDidMount() {
+
+        //display loader
+        this.setState({ loader: true });
 
         apiAction(api.club.all_club_members, this.init_data);
 
@@ -20,15 +24,19 @@ class ViewClubMembersPage extends Component {
 
 
     init_data = (res) => {
-        //merge club name with user object
-        let user_data = res.data.data.map((element, index) => {
-            let club_name = {club_name: element.club.name};
-            return {...element.user, ...club_name}
-        });
+        if (!res.data.data == "") {
 
-        this.setState({
-            data: user_data
-        }, () => console.log(this.state.data))
+            //merge club name with user object
+            let user_data = res.data.data.map((element, index) => {
+                let club_name = {club_name: element.club.name};
+                return {...element.user, ...club_name}
+            });
+
+            this.setState({
+                data: user_data,
+                loader: false,
+            }, () => console.log(this.state.data))
+        }
     };
 
     render() {
@@ -36,7 +44,10 @@ class ViewClubMembersPage extends Component {
 
         return (
             <div>
-                <ViewUsersPage users={this.state.data} table_title = "All Club Affiliates"/>
+                <ViewUsersPage
+                    users={this.state.data}
+                    loader = {this.state.loader}
+                    table_title = "All Club Affiliates"/>
             </div>
         );
     }

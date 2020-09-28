@@ -4,19 +4,29 @@ import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 import {apiAction} from "../../helpers/apiConnection";
 import {api} from "../../config/apiList";
 import ViewUsersPage from "../users/ViewUsersPage";
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 class ViewAffiliatePage extends Component {
 
     state = {
-        data: []
+        data: [],
+        loader: false,
     };
 
     componentDidMount() {
 
+        //display loader
+        this.setState({ loader: true });
+
         apiAction(api.affiliates.verified_affiliates, this.init_data);
 
     }
+
+    //notifications
+    notify = (msg, type) => {toast[type](msg)};
+    dismiss = () => toast.dismiss();
 
 
     init_data = (res) => {
@@ -29,11 +39,12 @@ class ViewAffiliatePage extends Component {
                 return {...element, ...club_name}
             });
             this.setState({
-                data: user_data
+                data: user_data,
+                loader: false,
             }, () => console.log(this.state.data))
         }
-
     };
+
     update_status = (api_url, status, user_id) => {
         this.setState({
             ...this.state,
@@ -65,12 +76,34 @@ class ViewAffiliatePage extends Component {
     };
 
     render() {
+        let loading_notification = (notify) => {
+            return (
+                <div>
+                    <ToastContainer
+                        position="top-center"
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        autoClose={false}
+                    />
+                </div>
+            );
+        };
 
 
         return (
             <div>
-                <ViewUsersPage users={this.state.data} update_status={this.update_status}
-                               table_title="Verified Affiliates"/>
+                {loading_notification(this.notify)}
+
+                <ViewUsersPage
+                    users={this.state.data}
+                    update_status={this.update_status}
+                    loader = {this.state.loader}
+                    table_title="Verified Affiliates"/>
             </div>
         );
     }
